@@ -115,8 +115,8 @@ public:
 		virtual void OnDOMReady(ultralight::View* caller, uint64_t frame_id, bool is_main_frame,const String& url);
 		bool DOMready;
 
-		void setup(int width, int height, string url);
-		void setup(int width, int height, ofVec2f t_offset, string url);
+		void setup(int width, int height, string url, string resourcePath);
+		void setup(int width, int height, ofVec2f t_offset, string url, string resourcePath);
 		void load(string url);
 		void update();
 		void draw();

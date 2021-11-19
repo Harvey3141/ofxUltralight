@@ -1,16 +1,18 @@
 ﻿#include "ofxUltralight.h"
 
 
-void ofxUltralight::setup(int width, int height, string url) {
-	setup(width, height, ofVec2f(0, 0), url);
+void ofxUltralight::setup(int width, int height, string url, string resourcePath) {
+	setup(width, height, ofVec2f(0, 0), url, resourcePath);
 	DOMready = false;
 }
 
-void ofxUltralight::setup(int width, int height, ofVec2f t_offset, string url) {
+void ofxUltralight::setup(int width, int height, ofVec2f t_offset, string url, string resourcePath) {
 	//ofLogNotice(ofToDataPath("resources").c_str());
 	offset = t_offset;
 
-	config.resource_path = "../../../../addons/ofxUltralight/libs/resources";
+	//config.resource_path = "../../../../addons/ofxUltralight/libs/resources";
+	const char* pathC = (const char*)resourcePath.c_str();
+	config.resource_path = pathC;
 	config.use_gpu_renderer = false;
 	config.device_scale = 1.0;
 	config.user_agent = "Mozilla/5.0 (Linux; Android 8.1.0; SM-G965F Build/OPM2.171019.029) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/7.2 Chrome/59.0.3071.125 Mobile Safari/537.36";
